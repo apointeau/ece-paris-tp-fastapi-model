@@ -37,7 +37,7 @@ def predict(
     x = pd.DataFrame(data=[params.values()], columns=params.keys())
     mdl = pickle.load(open("saved_model.pkl", "rb"))
     price = mdl.predict(x)
-    return price
+    return price[0]
 
 
 if __name__ == "__main__":
